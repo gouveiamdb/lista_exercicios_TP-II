@@ -1,0 +1,11 @@
+import pandas as pd
+
+def criar_serie(valores: list, indices: list) -> pd.Series:
+    serie = pd.Series(data=valores, index=indices)
+    return serie
+
+valores = [100, 200, 150, 300]
+indices = ['Produto A', 'Produto B', 'Produto C', 'Produto D']
+
+serie = criar_serie(valores, indices)
+print(serie)

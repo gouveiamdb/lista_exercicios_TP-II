@@ -1,0 +1,15 @@
+import pandas as pd
+
+def cria_dataframe(lista: list) -> pd.DataFrame:
+	df = pd.DataFrame(lista, columns=["Nome", "Idade", "Sexo", "Altura", "Peso"])
+	return df
+
+dados = [["Maria", 30, "F", 1.65, 65.0], 
+         ["João", 25, "M", 1.75, 80.0], 
+         ["Ana", 40, "F", 1.70, 70.0], 
+         ["Pedro", 20, "M", 1.80, 75.0], 
+         ["Lúcia", 35, "F", 1.60, 55.0]]
+
+df_planeja_dieta = cria_dataframe(dados)
+
+print = (df_planeja_dieta)

@@ -1,0 +1,9 @@
+import numpy as np
+
+def cria_matriz_identidade(n:int, m:float) -> np.ndarray:
+	matriz = np.zeros((n, n))
+	for i in range(n):
+		matriz[i, i] = m
+	return matriz
+
+print = (cria_matriz_identidade(3, 2))

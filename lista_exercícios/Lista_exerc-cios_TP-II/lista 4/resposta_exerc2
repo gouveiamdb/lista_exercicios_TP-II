@@ -1,0 +1,15 @@
+import numpy as np
+
+def analisa_transacoes(arr: np.ndarray) -> np.ndarray:
+	media = np.mean(transacoes)
+	desvio_padrao = np.std(transacoes)
+	valor_minimo = np.min(transacoes)
+	valor_maximo = np.max(transacoes)
+	mediana = np.median(transacoes)
+	quartil_25 = np.percentile(transacoes, 25)
+	quartil_75 = np.percentile(transacoes, 75)
+	return np.array([media, desvio_padrao, valor_minimo, valor_maximo, mediana, quartil_25, quartil_75])
+
+transacoes = np.array([100.0, 200.0, 50.0, 300.0, 250.0, 120.0, 80.0, 500.0])
+
+print(analisa_transacoes(transacoes))

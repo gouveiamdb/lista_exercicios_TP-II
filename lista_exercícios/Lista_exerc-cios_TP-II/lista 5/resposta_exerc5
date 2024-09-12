@@ -1,0 +1,13 @@
+import pandas as pd 
+
+def deleta_registros(df: pd.DataFrame, indices: list) -> pd.DataFrame:
+    df = df.drop(indices)
+    return df
+
+
+df = pd.DataFrame({'Nome': ['João', 'Maria', 'Pedro', 'Ana'], 
+                   'Idade': [25, 30, 40, 20], 
+                   'Cidade': ['São Paulo', 'Rio de Janeiro', 'Belo Horizonte', 'Porto Alegre']})
+
+df_novo = deleta_registros(df, [1, 3])
+print(df_novo)

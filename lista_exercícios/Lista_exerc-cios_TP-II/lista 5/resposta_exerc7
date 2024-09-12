@@ -1,0 +1,10 @@
+import pandas as pd
+
+def substitui_cores(df: pd.DataFrame, coluna: str, dicionario_cores: dict) -> pd.DataFrame:
+    df[coluna] = df[coluna].map(dicionario_cores).fillna(df[coluna])
+    return df
+
+df = pd.DataFrame({'A': ['maçã', 'banana', 'uva'], 'B': ['vermelha', 'amarela', 'roxa']})
+mapeamento_cores = {'vermelha': 'rosa', 'amarela': 'dourada'}
+df_novas_cores = substitui_cores(df, 'B', mapeamento_cores)
+print(df_novas_cores)

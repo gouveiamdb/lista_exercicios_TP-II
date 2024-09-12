@@ -1,0 +1,18 @@
+import pandas as pd
+
+def calcula_imc(df: pd.DataFrame) -> pd.DataFrame:
+	df['IMC'] = df['Peso'] / (df['Altura'] ** 2)
+	return df
+
+
+dados = {
+    "Nome": ["João", "Maria", "José", "Ana", "Carlos"],
+    "Idade": [30, 25, 40, 35, 28],
+    "Sexo": ["M", "F", "M", "F", "M"],
+    "Altura": [1.75, 1.68, 1.80, 1.65, 1.72],
+    "Peso": [70, 55, 85, 75, 80]
+}
+
+df = pd.DataFrame(dados)
+df_imc = calcula_imc(df)
+print = (df_imc)

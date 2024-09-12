@@ -1,0 +1,11 @@
+import numpy as np
+
+def calcula_imagem_integral(imagem: np.ndarray) -> np.ndarray:
+	
+	imagem_integral = np.cumsum(np.cumsum(imagem, axis=0), axis=1)
+	return imagem_integral
+
+imagem = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+imagem_integral = calcula_imagem_integral(imagem)
+
+print(imagem_integral)

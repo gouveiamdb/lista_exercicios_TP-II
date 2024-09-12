@@ -1,0 +1,21 @@
+import pandas as pd
+import numpy as np
+
+def identifica_outliers(df: pd.DataFrame, coluna: str) -> pd.DataFrame:
+	media = df[coluna].mean()
+	desvio = df[coluna].std()
+	limite_min = media - 3 * desvio
+	limite_max = media + 3 * desvio
+	outliers = df[(df[coluna] < limite_min) | (df[coluna] > limite_max)]
+	return outliers	
+
+
+dados = {
+     'Temperatura': [30, 32, 35, 28, 27, 31, 400, 29, 33, 34, 36],
+     'Pressao': [100, 101, 102, 99, 98, 97, 1003, 100, 101, 99, 102],
+     'Umidade': [600, 58, 62, 61, 63, 65, 59, 60, 64, 63, 61]
+}
+
+df = pd.DataFrame(dados)
+outliers = identifica_outliers(df, 'Temperatura')
+print(outliers)
